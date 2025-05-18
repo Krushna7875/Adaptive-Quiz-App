@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adaptive Quiz Hackathon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <body>
+    <div id="live-bg"></div>
+    <!-- rest of your content -->
+  </body>  
+
+  <!-- 🎉 Congrats Banner -->
+  <div id="congrats-banner" class="hidden">🎉 Congratulations! 🎉</div>
+
+  <!-- Start Screen -->
+  <section id="start-screen" class="screen active">
+    <div class="start-card">
+      <div class="marquee-container">
+        <div class="marquee-text">Welcome to Adaptive Quiz — Empower Your Learning Journey!</div>
+      </div>
+      <button id="start-btn">Start Quiz</button>
+    </div>
+  </section>
+
+  <!-- Quiz Screen -->
+  <section id="quiz-screen" class="screen">
+    <div id="loading-spinner" class="loading-spinner" style="display:none;"></div>
+    <div id="question-box" class="question-box">
+      <h2 id="question-text" class="question-text"></h2>
+      <p id="progress-text"></p>
+
+      <p id="timer-text" class="timer-text"><span id="timer">10</span>s</p>
+      <div id="timer-container">
+        <svg class="timer-svg" viewBox="0 0 100 100">
+          <circle class="timer-bg" cx="50" cy="50" r="45" />
+          <circle class="timer-fg" cx="50" cy="50" r="45" />
+          <!-- Removed duplicate timer-text ID -->
+          <text x="50" y="55" text-anchor="middle" font-size="14" fill="#333"></text>
+        </svg>
+      </div>
+
+      <div id="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+
+      <div id="answer-box" class="answer-box"></div>
+
+      <div class="button-group">
+        <button id="know-btn">Know</button>
+        <button id="dontknow-btn">Don’t Know</button>
+        <button id="next-btn" class="hidden">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result Screen -->
+  <section id="result-screen" class="screen">
+    <h2>Quiz Completed!</h2>
+    <div class="score-card">
+      <p>Your Score: <span id="score-text"></span></p>
+    </div>
+
+    <div class="result-buttons">
+      <button id="retry-full-btn">🔁 Retry Full Quiz</button>
+      <button id="retry-wrong-btn">❌ Retry Incorrect Only</button>
+      <button id="review-btn">📖 Review Flashcards</button>
+    </div>      
+  </section>
+
+  <!-- Flashcard Review Screen -->
+  <section id="flashcard-screen" class="screen">
+    <h2>Flashcards - Review Wrong Answers</h2>
+    <div id="flashcard-container"></div>
+    <button id="exit-review-btn">Exit Review</button>
+  </section>
+
+  <!-- Sounds -->
+  <audio id="sound-congrats" src="congrats.mp3" preload="auto"></audio>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="contact-info">
+        <p>Email: <a href="mailto:support@eduquiz.com">support@eduquiz.com</a></p>
+        <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+        <p>Address: 123 Education Lane, Knowledge City</p>
+      </div>
+      <div class="footer-copy">
+        &copy; 2025 EduQuiz. All rights reserved.
+      </div>
+    </div>
+  </footer> 
+</body>
+</html>
